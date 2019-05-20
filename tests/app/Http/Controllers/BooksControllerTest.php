@@ -155,6 +155,7 @@ class BooksControllerTest extends TestCase
     /** @test **/
     public function destroy_should_not_match_an_invalid_route()
     {
-        $this->markTestIncomplete('pending');
+        $this->delete('/books/this-is-invalid')
+            ->seeStatusCode(404);
     }
 } 
